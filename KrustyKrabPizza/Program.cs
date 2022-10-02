@@ -1,7 +1,17 @@
+using KrustyKrabPizza.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ApplicationDbContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+// ^Will try to connect to db
+// NOTE: every time we change something in db setup we should update db (also called migration)
+// add-migration SomeNameHere
+// update-database
 
 var app = builder.Build();
 
