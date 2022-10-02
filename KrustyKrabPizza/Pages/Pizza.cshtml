@@ -3,5 +3,34 @@
 @{
 }
 
-<a class="nav-link text-light" asp-area="" asp-page="/Forms/CustomPizza">Custom Pizza</a>
-<a class="nav-link text-light" asp-area="" asp-page="/Checkout/Checkout">Checkout</a>
+
+<div class="text-center flex-column" >
+    <h2 class="text-capitalize display-2">Our Pizza Selection:</h2>
+    <h3>Choose one then done OR select our pizza builder!</h3>
+
+    <div class="container" >
+        <div class="row col-12 mb-5 mt-5" >
+            <div class="row w-100" >
+
+                <div class="col-4 bg-opacity-10 bg-dark rounded-5">
+                    <img src="~/images/Pizzas/Create.png" class="w-100" />
+                </div>
+
+                <div class="col-8 align-items-center">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 40rem; float: right;">
+                        <div class="card-header">Create Your Own Pizza</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Make your own pizza with our custom pizza maker!</h4>
+                            <p class="card-text">More simple than ever to create your own pizza, the way you like to pizza!</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="text-light btn btn-success w-25" asp-page="Forms/CustomPizza">Build!</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="nav-link text-light" asp-area="" asp-page="/Forms/CustomPizza">Custom Pizza</a>
+    <a class="nav-link text-light" asp-area="" asp-page="/Checkout/Checkout">Checkout</a>
+</div>
