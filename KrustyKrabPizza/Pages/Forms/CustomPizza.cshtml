@@ -4,14 +4,40 @@
 }
 
 <div class="container text-center">
-    <h1 class="text-uppercase">Create your own pizza!</h1>
+    <h1 class="text-uppercase mt-4">Create your own pizza!</h1>
     <form method="post">
         <input 
         class="form-control form-control-lg" 
         type="text" 
         asp-for="Pizza.PizzaName" 
         placeholder="give your pizza a name..." />
-        <button class="btn btn-primary mt-4" type="submit">Order My Pizza!</button>
+
+        <h3 class="mt-4">Proteins:</h3>
+        <input type="checkbox" class="btn-check" id="btncheck1" asp-for="Pizza.HasTuna">
+        <label class="btn btn-primary rounded-4" for="btncheck1">Has Krabby Fishy Krabby?</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck2" asp-for="Pizza.HasHam">
+        <label class="btn btn-primary rounded-4" for="btncheck2">Has Hammy Krabby?</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck3" asp-for="Pizza.HasBeef">
+        <label class="btn btn-primary rounded-4" for="btncheck3">Has Beef Krabby?</label>
+
+        <h3 class="mt-4">Toppings:</h3>
+        <input type="checkbox" class="btn-check" id="btncheck4" asp-for="Pizza.HasPineapple">
+        <label class="btn btn-warning text-danger text-uppercase rounded-4" for="btncheck4">Pineapple?</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck5" asp-for="Pizza.HasTomatoSause">
+        <label class="btn btn-secondary rounded-4" for="btncheck5">Has Squids Grown Tomatoes?</label>
+
+        <input type="checkbox" class="btn-check" id="btncheck6" asp-for="Pizza.HasMushrooms">
+        <label class="btn btn-secondary rounded-4" for="btncheck6">Has Spongy Mushrooms?</label>
+
+        <h3 class="mt-4">Dairy:</h3>
+        <input type="checkbox" class="btn-check" id="btncheck7" checked="checked" asp-for="Pizza.HasCheese">
+        <label class="btn btn-info rounded-4" for="btncheck7">Has Krusty Cheese?</label>
+
+        <h3 class="mt-4">Finished:</h3>
+        <button class="btn btn-success" type="submit">Order My Pizza!</button>
     </form>
 </div>
 
