@@ -1,0 +1,50 @@
+﻿@page
+@model KrustyKrabPizza.Pages.OrdersModel
+@{
+}
+
+<h3 class="mt-4">Orders:</h3>
+<hr />
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th>ID:</th>
+            <th>Pizza:</th>
+            <th>Price:</th>
+        </tr> 
+    </thead>
+    <tbody>
+        <!--Showing db data that we saved (could be more if we had or wanted more)-->
+        @for (int o = 0; o < Model.PizzaOrders.Count; o++)
+        {
+            if(o%2==0)
+            {
+                <tr class="table-primary">
+                    <th>
+                        @Model.PizzaOrders[o].Id
+                    </th>
+                    <th>
+                        @Model.PizzaOrders[o].PizzaName
+                    </th>
+                    <th>
+                        @Model.PizzaOrders[o].BasePrice
+                    </th>
+                </tr>
+            }
+            else{
+                <tr class="table-secondary">
+                    <th>
+                        @Model.PizzaOrders[o].Id
+                    </th>
+                    <th>
+                        @Model.PizzaOrders[o].PizzaName
+                    </th>
+                    <th>
+                        @Model.PizzaOrders[o].BasePrice
+                    </th>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
