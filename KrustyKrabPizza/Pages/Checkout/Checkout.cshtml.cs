@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using KrustyKrabPizza.Data;
+using KrustyKrabPizza.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace KrustyKrabPizza.Pages.Checkout
@@ -20,7 +22,15 @@ namespace KrustyKrabPizza.Pages.Checkout
         public bool HasHam { get; set; }
         public bool HasBeef { get; set; }
         public List<string> HasTheseList { get; set; } = new List<string>();
-        public List<string> NotTheseList { get; set; } = new List<string>();    
+        public List<string> NotTheseList { get; set; } = new List<string>();
+
+        private readonly ApplicationDbContext _context;
+        public CheckoutModel(ApplicationDbContext context)
+        {
+            // Contect is our database
+            _context = context;
+        }
+
 
         // Methods
         public void OnGet()
@@ -53,6 +63,14 @@ namespace KrustyKrabPizza.Pages.Checkout
             if (HasPineapple)
                 HasTheseList.Add("Pineapple 🍍");
             else NotTheseList.Add("Pineapple 🍍");
+
+            // Adding pizza order into database
+            PizzaOrderModel pizzaOrder = new PizzaOrderModel() { 
+                PizzaName = this.PizzaName,
+                BasePrice = this.PizzaPrice
+            };
+            _context.PizzaOrders.Add(pizzaOrder);   // adds order to sql db
+            _context.SaveChanges();                 //actually pushes to db 
         }
     }
 }

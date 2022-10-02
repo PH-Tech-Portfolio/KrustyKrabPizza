@@ -10,14 +10,6 @@ namespace KrustyKrabPizza.Pages.Forms
         [BindProperty]  // Binding custom pizza (below) to the pizza model (above). Allows creation of custom pizzas from the custom pizzas view
         public PizzasModel Pizza { get; set; }
         public float PizzaPrice { get; set; }
-        // Additional toppings
-        //public bool HasTomatoSause { get; set; }
-        //public bool HasCheese { get; set; }
-        //public bool HasMushrooms { get; set; }
-        //public bool HasPineapple { get; set; } // Should make label do something funny like be red or whatever idk
-        //public bool HasTuna { get; set; }
-        //public bool HasHam { get; set; }
-        //public bool HasBeef { get; set; }
 
         // Methods
         public void OnGet()

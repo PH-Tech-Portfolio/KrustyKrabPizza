@@ -13,6 +13,9 @@ namespace KrustyKrabPizza.Pages
                 BasePrice=14.99f,
                 HasTomatoSause=true,
                 HasCheese=true,
+                HasMushrooms=true,
+                HasBeef=true,
+                HasHam=true,
                 FinalPrice=17.99f
             },
             new PizzasModel() {
@@ -29,7 +32,7 @@ namespace KrustyKrabPizza.Pages
                 PizzaName="Dairy gone bye bye",
                 BasePrice=10.99f,
                 HasTomatoSause=true,
-                HasCheese=false,
+                HasCheese=false,        // Don't need to include but am just bc to show purpose
                 FinalPrice=13.99f
             },
             new PizzasModel() {
@@ -48,6 +51,11 @@ namespace KrustyKrabPizza.Pages
                 BasePrice=20.99f,
                 HasTomatoSause=true,
                 HasCheese=true,
+                HasMushrooms=true,
+                HasPineapple=true,
+                HasTuna=true,
+                HasHam=true,
+                HasBeef=true,
                 FinalPrice=25.99f
             },
             
