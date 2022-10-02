@@ -17,11 +17,11 @@
                         <img src="~/images/Pizzas/Create.png" class="w-100" />
                     </div>
 
-                    <div class="col-8 align-items-center">
-                        <div class="card text-white bg-primary mb-3" style="max-width: 40rem; float: right;">
+                    <div class="col-5" style="margin-left:50px">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 70rem; float: right;">
                             <div class="card-header">Create Your Own Pizza</div>
                             <div class="card-body">
-                                <h4 class="card-title">Make your own pizza with our custom pizza maker!</h4>
+                                <h4 class="card-title">For you, by you!</h4>
                                 <p class="card-text">More simple than ever to create your own pizza, the way you like to pizza!</p>
                             </div>
                             <div class="card-footer">
@@ -32,15 +32,31 @@
                 </div>
             </div>
 
-            <div class="col-4 mb-5">
-                <a class="btn btn-primary mt-1" asp-page="/Checkout/Checkout">
-                    <img src="" class="w-100" asp-append-version="true" />
-                </a>
-                <br />
-            </div>
+            <br />
+            <br />
+            <br />
+            <h2 class="mt-4">Prebuilt:</h2>
+            @foreach (var pizzaItem in Model.FakePizzaDb)
+            {
+                string imagePath = $@"~/images/Pizzas/{pizzaItem.ImageTitle}.png";
+
+                <div class="col-4 mb-5 bg-light bg-opacity-10">
+                    <a class="border-4 mt-1" asp-page="/Checkout/Checkout" 
+                    asp-route-ImageTitle="@pizzaItem.ImageTitle"
+                    asp-route-PizzaPrice="@pizzaItem.FinalPrice"
+                    asp-route-PizzaName="@pizzaItem.PizzaName"
+                    asp-route-HasTomatoSause="@pizzaItem.HasTomatoSause"
+                    asp-route-HasCheese="@pizzaItem.HasCheese"
+                    asp-route-HasMushrooms="@pizzaItem.HasMushrooms"
+                    asp-route-HasPineapple="@pizzaItem.HasPineapple"
+                    asp-route-HasTuna="@pizzaItem.HasTuna" 
+                    asp-route-HasHam="@pizzaItem.HasHam"
+                    asp-route-HasBeef="@pizzaItem.HasBeef">
+                        <img src="@imagePath" class="w-100 rounded-4" asp-append-version="true" />
+                    </a>
+                    <br />
+                </div>
+            }
         </div>
-        
     </div>
-    <a class="nav-link text-light" asp-area="" asp-page="/Forms/CustomPizza">Custom Pizza</a>
-    <a class="nav-link text-light" asp-area="" asp-page="/Checkout/Checkout">Checkout</a>
 </div>
