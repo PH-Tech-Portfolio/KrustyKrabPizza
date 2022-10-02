@@ -7,9 +7,10 @@ namespace KrustyKrabPizza.Pages.Checkout
     // Binds multiple properties so they will be accessable in the view, specifying we can use GET
     public class CheckoutModel : PageModel
     {
-        // Props, nullable
-        public string? Name { get; set; }
-        public float Price { get; set; }
+        // Props, nullable,
+        // NOTE: names of these properties have to be same as ones being passed in throgh link or else they will not bind
+        public string? PizzaName { get; set; }
+        public float PizzaPrice { get; set; }
         public string? ImageTitle { get; set; }
         public bool HasTomatoSause { get; set; }
         public bool HasCheese { get; set; }
@@ -25,9 +26,9 @@ namespace KrustyKrabPizza.Pages.Checkout
         public void OnGet()
         {
             // If values are null
-            if (string.IsNullOrEmpty(Name))
-                Name = "Custom";
-            if (string.IsNullOrEmpty(ImageTitle))
+            if (string.IsNullOrEmpty(PizzaName))
+                PizzaName = "Custom";
+            if (string.IsNullOrEmpty(ImageTitle))   // NOTE: not even passing this...
                 ImageTitle = "Create";
 
             if (HasTuna)
