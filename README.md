@@ -31,9 +31,9 @@ I first watched the tutorial then went back and created by own slightly differen
 ![image](https://user-images.githubusercontent.com/70828342/193474339-a9dad9bb-c1c3-4ace-9341-5c6c33f19d80.png)
 ![image](https://user-images.githubusercontent.com/70828342/193474356-3ad92c07-a694-4494-a519-32c8922fe0e7.png)
 ![image](https://user-images.githubusercontent.com/70828342/193474382-1ac7e90e-a94b-422c-965f-f74ade45e8b0.png)
-![image](https://user-images.githubusercontent.com/70828342/193474402-f9dfe1d2-f60c-4728-bfb4-9c08d5f0ea37.png)
 ![image](https://user-images.githubusercontent.com/70828342/193474413-a19a5385-5d70-4519-98c7-9ee783da40c6.png)
 ![image](https://user-images.githubusercontent.com/70828342/193474519-2d880376-cbd0-47e5-9b15-754b180695df.png)
+![image](https://user-images.githubusercontent.com/70828342/193474402-f9dfe1d2-f60c-4728-bfb4-9c08d5f0ea37.png)
 ![image](https://user-images.githubusercontent.com/70828342/193474419-3e260287-79a5-4b19-a58c-31fb6a930cd2.png)
 
 I could add some more things. A couple of things I havent done but could do in future would be adding a login when I learn that. Add data validation when writing names or something. Also I could add more error checking bc I was very scamp with error checking in this one (focusing on learning). Could also fix the annoying case where if not enough contents on page the footer bar comes really high up. Only really noticable on thank you page but still a thing I could fix later.
