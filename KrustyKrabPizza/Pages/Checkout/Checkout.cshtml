@@ -1,6 +1,40 @@
 ﻿@page
 @model KrustyKrabPizza.Pages.Checkout.CheckoutModel
 @{
+    string imagePath = $@"~/images/Pizzas/{Model.ImageTitle}.png";
 }
 
-<a class="nav-link text-light" asp-area="" asp-page="/Checkout/ThankYou">Thank You</a>
+
+<h1>Your Order:</h1>
+
+<div class="align-content-center">
+    <div class="col-3 m-auto mt-4">
+        <img src="@imagePath" class="w-100" asp-append-version="true" />
+
+        <!--Card for order information:-->
+        <div class="card border-primary mb-3" style="max-width: 50rem;">
+            <div class="card-header">Order of @Model.Name Pizza</div>
+            <div class="card-body">
+                <h4 class="card-title">Details</h4>
+                <p class="card-text">HAS:
+                    <ul>
+                        @foreach (var topping in Model.HasTheseList)
+                        {
+                            <li>@topping</li>
+                        }
+                    </ul>
+                <p class="card-text">NOT:
+                    <ul>
+                            @foreach (var notTopping in Model.NotTheseList)
+                            {
+                                <li>@notTopping</li>
+                            }
+                    </ul>
+                </p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-outline-success" asp-page="ThankYou">Confirm!</a>
+            </div>
+        </div>
+    </div>
+</div>
